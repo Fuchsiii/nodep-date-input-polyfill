@@ -134,19 +134,26 @@ export default class Input {
 
   // Return false if the browser does not support input[type="date"].
   static supportsDateInput() {
-    const input = document.createElement(`input`);
-    input.setAttribute(`type`, `date`);
+    // improved support detection
+    var support;
+    const input = document.createElement('input');
 
-    const notADateValue = `not-a-date`;
-    input.setAttribute(`value`, notADateValue);
+    try {
+      input.type = "date";
 
-    return (
-      (
-        document.currentScript
-        && !document.currentScript.hasAttribute(`data-nodep-date-input-polyfill-debug`)
-      )
-      && !(input.value === notADateValue)
-    );
+      if (input.type === "date") {
+        //console.log("supported");
+        support = true;
+      } else {
+        support = false
+        //console.log("not supported");
+      }
+    } catch (e){
+      support = false;
+      //console.log("not supported");
+    }
+
+    return ((document.currentScript && !document.currentScript.hasAttribute(`data-nodep-date-input-polyfill-debug`)) && (support));
   }
 
   // Will add the Picker to all inputs in the page.
