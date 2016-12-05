@@ -20,12 +20,10 @@ if(!Input.supportsDateInput()) {
     });
 
     document.addEventListener(`ajax:content-replaced`, ()=> {
-      //console.log("nodep ajax");
       Input.addPickerToDateInputs();
     });
 
     document.addEventListener(`DOMSubtreeModified`, ()=> {
-      //console.log("nodep subtree");
       Input.addPickerToDateInputs();
     });
 
