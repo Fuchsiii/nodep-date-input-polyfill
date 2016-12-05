@@ -15,9 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/brianblakely/nodep-date-input-polyfill.git"
+    "url": "git://github.com/Fuchsiii/nodep-date-input-polyfill.git"
   },
-  "bugs": "https://github.com/brianblakely/nodep-date-input-polyfill/issues",
+  "bugs": "https://github.com/Fuchsiii/nodep-date-input-polyfill/issues",
   "keywords": [
     "html5",
     "light",
