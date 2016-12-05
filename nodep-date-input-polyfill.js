@@ -18,6 +18,11 @@ if(!Input.supportsDateInput()) {
     document.querySelector(`body`).addEventListener(`mousemove`, ()=> {
       Input.addPickerToDateInputs();
     });
+
+    document.addEventListener(`ajax:content-replaced`, ()=> {
+      console.log("nodep ajax");
+      Input.addPickerToDateInputs();
+    });
   };
 
   let DOMContentLoaded = false;
