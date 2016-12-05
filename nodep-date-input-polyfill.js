@@ -24,6 +24,12 @@ if(!Input.supportsDateInput()) {
     init();
   });
 
+  document.addEventListener(`ajax:content-replaced`, ()=> {
+    DOMContentLoaded = true;
+
+    init();
+  });
+
   window.addEventListener(`load`, ()=> {
     if(!DOMContentLoaded) {
       init();
