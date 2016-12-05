@@ -178,7 +178,7 @@ export default class Input {
       //console.log("not supported");
     }
 
-    return ((document.currentScript && !document.currentScript.hasAttribute(`data-nodep-date-input-polyfill-debug`)) && !(support));
+    return ((document.currentScript && !document.currentScript.hasAttribute(`data-nodep-date-input-polyfill-debug`)) && (support));
   }
 
   // Will add the Picker to all inputs in the page.

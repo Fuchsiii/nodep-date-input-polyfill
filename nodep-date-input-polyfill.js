@@ -15,19 +15,6 @@ if(!Input.supportsDateInput()) {
       Input.addPickerToDateInputs();
     });
 
-    document.querySelector(`body`).addEventListener(`mousemove`, ()=> {
-      //console.log("mousemove");
-      //Input.addPickerToDateInputs();
-    });
-
-    document.addEventListener(`ajax:content-replaced`, ()=> {
-      Input.addPickerToDateInputs();
-    });
-
-    document.addEventListener(`DOMSubtreeModified`, ()=> {
-      Input.addPickerToDateInputs();
-    });
-
     setInterval(function(){
       Input.addPickerToDateInputs();
     }, 500);
