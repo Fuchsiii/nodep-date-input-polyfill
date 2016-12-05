@@ -23,6 +23,11 @@ if(!Input.supportsDateInput()) {
       console.log("nodep ajax");
       Input.addPickerToDateInputs();
     });
+
+    document.addEventListener(`DOMSubtreeModified`, ()=> {
+      console.log("nodep subtree");
+      Input.addPickerToDateInputs();
+    });
   };
 
   let DOMContentLoaded = false;
