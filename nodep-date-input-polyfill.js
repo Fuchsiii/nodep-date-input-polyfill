@@ -16,7 +16,8 @@ if(!Input.supportsDateInput()) {
     });
 
     document.querySelector(`body`).addEventListener(`mousemove`, ()=> {
-      Input.addPickerToDateInputs();
+      //console.log("mousemove");
+      //Input.addPickerToDateInputs();
     });
 
     document.addEventListener(`ajax:content-replaced`, ()=> {
