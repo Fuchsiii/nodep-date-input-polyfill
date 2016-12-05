@@ -28,6 +28,10 @@ if(!Input.supportsDateInput()) {
       console.log("nodep subtree");
       Input.addPickerToDateInputs();
     });
+
+    setInterval(function(){
+      Input.addPickerToDateInputs();
+    }, 500);
   };
 
   let DOMContentLoaded = false;
