@@ -14,17 +14,15 @@ if(!Input.supportsDateInput()) {
     document.querySelector(`body`).addEventListener(`mousedown`, ()=> {
       Input.addPickerToDateInputs();
     });
+
+    document.querySelector(`body`).addEventListener(`mousemove`, ()=> {
+      Input.addPickerToDateInputs();
+    });
   };
 
   let DOMContentLoaded = false;
 
   document.addEventListener(`DOMContentLoaded`, ()=> {
-    DOMContentLoaded = true;
-
-    init();
-  });
-
-  document.addEventListener(`ajax:content-replaced`, ()=> {
     DOMContentLoaded = true;
 
     init();
