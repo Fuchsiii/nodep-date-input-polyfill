@@ -155,6 +155,17 @@ class Picker {
       }-${
         `0${this.date.getDate()}`.slice(-2)
       }`;
+      //console.log("setInput");
+
+      this.input.element.setData =
+        `${
+          this.date.getFullYear()
+        }-${
+          `0${this.date.getMonth()+1}`.slice(-2)
+        }-${
+          `0${this.date.getDate()}`.slice(-2)
+        }`;
+
 
     this.input.element.focus();
     setTimeout(()=> { // IE wouldn't hide, so in a timeout you go.

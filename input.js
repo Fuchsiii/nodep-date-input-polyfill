@@ -38,8 +38,32 @@ export default class Input {
 
             const YMD = val.split(`-`);
 
-            this.element.setAttribute(
+            /*this.element.setAttribute(
               `value`,
+              this.localeText.format
+                .replace(`Y`, YMD[0])
+                .replace(`M`, YMD[1])
+                .replace(`D`, YMD[2])
+            );*/
+            this.element.setAttribute(
+              `value`, YMD[0] + "-" + YMD[1] + "-" + YMD[2]
+            );
+          }
+        },
+        'setData': {
+          get: ()=> this.element.polyfillValue,
+          set: val=> {
+            if(!/^\d{4}-\d{2}-\d{2}$/.test(val)) {
+              this.element.polyfillValue = ``;
+              return false;
+            }
+
+            this.element.polyfillValue = val;
+
+            const YMD = val.split(`-`);
+
+            this.element.setAttribute(
+              `data-has-picker`,
               this.localeText.format
                 .replace(`Y`, YMD[0])
                 .replace(`M`, YMD[1])
@@ -76,6 +100,7 @@ export default class Input {
 
     // Initialize value for display.
     this.element.value = this.element.getAttribute(`value`);
+    this.element.setAttribute(`data-has-picker`, this.element.polyfillValue);
 
     // Open the picker when the input get focus,
     // also on various click events to capture it in all corner cases.
