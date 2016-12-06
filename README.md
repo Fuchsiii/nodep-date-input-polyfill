@@ -1,3 +1,5 @@
+# DO NOT USE THIS. It is heavily modified and will not run correctly out of the box. Use the original project instead. 
+
 # nodep-date-input-polyfill
 
 Just include this simple script and IE, Firefox, and macOS Safari will support `<input type="date">`, without any dependencies, not even jQuery!
