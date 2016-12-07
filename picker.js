@@ -48,9 +48,12 @@ class Picker {
     this.container.appendChild(this.today);
 
     // Setup unchanging DOM for days matrix.
-    const daysMatrix = document.createElement(`table`);
-    this.daysHead = document.createElement(`thead`);
-    this.days = document.createElement(`tbody`);
+    const daysMatrix = document.createElement(`div`);
+    daysMatrix.className = "nodep-table";
+    this.daysHead = document.createElement(`div`);
+    this.daysHead.className = `nodep-thead`;
+    this.days = document.createElement(`div`);
+    this.days.className = `nodep-tbody`;
 
     // THIS IS THE BIG PART.
     // When the user clicks a day, set that day as the date.
@@ -182,9 +185,9 @@ class Picker {
 
     this.locale = this.input.locale;
 
-    const daysHeadHTML = [`<tr>`];
+    const daysHeadHTML = [`<div class='nodep-tr'>`];
     for(let i = 0, len = this.input.localeText.days.length; i < len; ++i) {
-      daysHeadHTML.push(`<th scope="col">${this.input.localeText.days[i]}</th>`);
+      daysHeadHTML.push(`<div class='nodep-th'>${this.input.localeText.days[i]}</div>`);
     }
     this.daysHead.innerHTML = daysHeadHTML.join(``);
 
@@ -228,15 +231,15 @@ class Picker {
       // Add a row every 7 days.
       if(i % 7 === 0) {
         matrixHTML.push(`
-          ${i !== 0 ? `</tr>` : ``}
-          <tr>
+          ${i !== 0 ? `</div class='nodep-tr'>` : ``}
+          <div class='nodep-tr'>
         `);
       }
 
       // Add new column.
       // If no days from this month in this column, it will be empty.
       if(i + 1 <= startDay) {
-        matrixHTML.push(`<td></td>`);
+        matrixHTML.push(`<div class='nodep-td'></div>`);
         continue;
       }
 
@@ -245,9 +248,9 @@ class Picker {
       const selected = selMatrix && selDate.getDate() === dayNum;
 
       matrixHTML.push(
-        `<td data-day ${selected ? `data-selected` : ``}>
+        `<div class='nodep-td' data-day ${selected ? `data-selected` : ``}>
           ${dayNum}
-        </td>`
+        </div>`
       );
     }
 

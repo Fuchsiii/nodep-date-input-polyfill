@@ -8,8 +8,8 @@
   width: auto;
   line-height: normal;
   border-radius: 0;
-  font-family: sans-serif;
-  font-size: 14px;
+  //font-family: sans-serif;
+  font-size: 1rem;
 }
 
 date-input-polyfill {
@@ -30,50 +30,70 @@ date-input-polyfill {
     display: block;
   }
 
-  select, table, th, td {
+  select, .nodep-table, .nodep-th, .nodep-td {
     @include reset();
     box-shadow: none;
   }
 
+  .nodep-th {
+    //background: #e5e9ee;
+    border-bottom: 1px solid #335176;
+    //border-top: 1px solid #335176;
+  }
+
   select, button {
     border: 0;
-    border-bottom: 1px solid #E0E0E0;
+    //border-bottom: 3px solid #fff;
     height: 24px;
     vertical-align: top;
   }
 
   select {
-    width: 50%;
+    width: 45%;
 
     &:first-of-type {
-      border-right: 1px solid #E0E0E0;
+      //border-right: 2px solid #fff;
       width: 30%;
     }
   }
   button {
     padding: 0;
-    width: 20%;
-    background: #E0E0E0;
+    width: 25%;
+    background: #667c98;
+    color: #fff;
+    //border-left: 3px solid #fff;
+    font-weight: 200;
+    font-size: .8rem;
   }
 
-  table {
+  .nodep-thead, .nodep-tbody {
+    display: table;
+  }
+  .nodep-tr {
+    display: table-row;
+  }
+  .nodep-td, .nodep-th {
+    display: table-cell;
+  }
+
+  .nodep-table {
     border-collapse: collapse;
   }
-  th, td {
-    width: 32px;
+  .nodep-th, .nodep-td {
+    width: 38px;
     padding: 4px;
     text-align: center;
   }
-  td[data-day] {
+  .nodep-td[data-day] {
     cursor: pointer;
 
     &:hover {
-      background: #E0E0E0;
+      background: #ccd3dd;
     }
   }
   [data-selected] {
     font-weight: bold;
-    background: #D8EAF6;
+    background: #99a8bb;
   }
 }
 
