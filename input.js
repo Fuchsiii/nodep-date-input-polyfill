@@ -69,6 +69,13 @@ export default class Input {
                 .replace(`M`, YMD[1])
                 .replace(`D`, YMD[2])
             );
+
+            // Create the event.
+            var event = document.createEvent('Event');
+            // Define that the event name is 'build'.
+            event.initEvent('nodep-date-input-update', true, true);
+            // target can be any Element or other EventTarget.
+            this.element.dispatchEvent(event);
           }
         },
         'valueAsDate': {
@@ -100,7 +107,15 @@ export default class Input {
 
     // Initialize value for display.
     this.element.value = this.element.getAttribute(`value`);
-    this.element.setAttribute(`data-has-picker`, this.element.polyfillValue);
+    //this.element.setAttribute(`data-has-picker`, this.element.polyfillValue);
+    this.element.setData = this.element.value;
+
+    // Create the event.
+    var event = document.createEvent('Event');
+    // Define that the event name is 'build'.
+    event.initEvent('nodep-date-input-update', true, true);
+    // target can be any Element or other EventTarget.
+    this.element.dispatchEvent(event);
 
     // Open the picker when the input get focus,
     // also on various click events to capture it in all corner cases.

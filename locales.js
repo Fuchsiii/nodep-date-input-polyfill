@@ -3,34 +3,7 @@
 // Days and months must be listed in the order they should display.
 
 const locales = {
-  'en_en-US': {
-    days: [
-      `Sun`,
-      `Mon`,
-      `Tue`,
-      `Wed`,
-      `Thu`,
-      `Fri`,
-      `Sat`
-    ],
-    months: [
-      `January`,
-      `February`,
-      `March`,
-      `April`,
-      `May`,
-      `June`,
-      `July`,
-      `August`,
-      `September`,
-      `October`,
-      `November`,
-      `December`
-    ],
-    today: `Today`,
-    format: `M/D/Y`
-  },
-  'en-GB': {
+  'en_en-GB': {
     days: [
       `Sun`,
       `Mon`,
@@ -56,6 +29,33 @@ const locales = {
     ],
     today: `Today`,
     format: `D/M/Y`
+  },
+  'en-US': {
+    days: [
+      `Sun`,
+      `Mon`,
+      `Tue`,
+      `Wed`,
+      `Thu`,
+      `Fri`,
+      `Sat`
+    ],
+    months: [
+      `January`,
+      `February`,
+      `March`,
+      `April`,
+      `May`,
+      `June`,
+      `July`,
+      `August`,
+      `September`,
+      `October`,
+      `November`,
+      `December`
+    ],
+    today: `Today`,
+    format: `M/D/Y`
   },
   /* Simplified Chinese */
   'zh_zh-CN': {
