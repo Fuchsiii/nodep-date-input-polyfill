@@ -70,11 +70,8 @@ export default class Input {
                 .replace(`D`, YMD[2])
             );
 
-            // Create the event.
             var event = document.createEvent('Event');
-            // Define that the event name is 'build'.
             event.initEvent('nodep-date-input-update', true, true);
-            // target can be any Element or other EventTarget.
             this.element.dispatchEvent(event);
           }
         },
@@ -174,7 +171,7 @@ export default class Input {
 
   // Return false if the browser does not support input[type="date"].
   static supportsDateInput() {
-    // improved support detection
+    // improved feature detection
     var support;
     const input = document.createElement('input');
 
@@ -182,15 +179,12 @@ export default class Input {
       input.type = "date";
 
       if (input.type === "date") {
-        //console.log("supported");
         support = true;
       } else {
         support = false
-        //console.log("not supported");
       }
     } catch (e){
       support = false;
-      //console.log("not supported");
     }
 
     return ((document.currentScript && !document.currentScript.hasAttribute(`data-nodep-date-input-polyfill-debug`)) && (support));

@@ -6,15 +6,11 @@ import Input from './input.js';
 // Check if type="date" is supported.
 if(!Input.supportsDateInput()) {
   const init = ()=> {
-    //console.log("nodep-date-input init");
     Picker.instance = new Picker();
     Input.addPickerToDateInputs();
 
-    // Create the event.
     var event = document.createEvent('Event');
-    // Define that the event name is 'build'.
     event.initEvent('nodep-date-input-init', true, true);
-    // target can be any Element or other EventTarget.
     document.dispatchEvent(event);
 
     // This is also on mousedown event so it will capture new inputs that might
@@ -23,22 +19,12 @@ if(!Input.supportsDateInput()) {
     //  Input.addPickerToDateInputs();
     //});
 
-    //setInterval(function(){
-    //  console.log("nodep-date-input interval")
-    //  Input.addPickerToDateInputs();
-    //}, 500);
-
-    // Listen for the event.
     document.addEventListener('nodep-date-input-onajax', function (e) {
-      // e.target matches elem
-      Input.addPickerToDateInputs();
-      //console.log("nodep-date-input-onajax");
 
-      // Create the event.
+      Input.addPickerToDateInputs();
+
       var event = document.createEvent('Event');
-      // Define that the event name is 'build'.
-      event.initEvent('nodep-date-input-onajax-sucess', true, true);
-      // target can be any Element or other EventTarget.
+      event.initEvent('nodep-date-input-onajax-return', true, true);
       document.dispatchEvent(event);
     }, false);
   };
