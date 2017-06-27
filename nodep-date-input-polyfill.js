@@ -27,6 +27,16 @@ if(!Input.supportsDateInput()) {
       event.initEvent('nodep-date-input-onajax-return', true, true);
       document.dispatchEvent(event);
     }, false);
+    
+    document.addEventListener('reset', function (e) {
+      Picker.instance = undefined;
+      Picker.instance = new Picker();
+      Input.addPickerToDateInputs();
+      
+      var event = document.createEvent('Event');
+      event.initEvent('nodep-date-input-init', true, true);
+      document.dispatchEvent(event);
+    }, false);
   };
 
   let DOMContentLoaded = false;
